@@ -21,6 +21,7 @@ public class ApiApplication{
 	CommandLineRunner init(StorageService storageService) {
 		return (args) -> {
 			storageService.init();
+			storageService.deleteAll();
 		};
 	}
 
