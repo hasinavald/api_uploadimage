@@ -127,8 +127,8 @@ public class Signal {
 		return region;
 	}
 
-	public void setRegion(String nomRegion) {
-		this.region = nomRegion;
+	public void setRegion(String region) {
+		this.region = region;
 	}
 
 	public String getUsername(){
