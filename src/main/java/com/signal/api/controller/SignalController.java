@@ -164,7 +164,7 @@ public class SignalController {
 	//root path for image files
     private String FILE_PATH_ROOT = "signal_images/";
 	
-    @GetMapping("/{filename}")
+    @GetMapping("/getimage/{filename}")
     public ResponseEntity<byte[]> getImage(@PathVariable("filename") String filename) {
         byte[] image = new byte[0];
         try {
