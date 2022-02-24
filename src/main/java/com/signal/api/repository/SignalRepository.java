@@ -15,7 +15,7 @@ public interface SignalRepository extends JpaRepository<Signal, Long>{
 	
 	@Modifying
 	@Transactional
-	@Query(value = "UPDATE signals SET status = :status ,  WHERE id = :id", nativeQuery = true)
+	@Query(value = "UPDATE signals SET status = :status  WHERE id = :id", nativeQuery = true)
 	int updateStatusSignal(String status,Long id);
 
 	@Modifying
