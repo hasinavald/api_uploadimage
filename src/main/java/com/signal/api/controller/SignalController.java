@@ -87,7 +87,7 @@ public class SignalController {
 	}
 	
 	@GetMapping("/findByRegion")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasRole('ADMIN') or hasRole('MODERATOR')")
 	public ResponseEntity<?> findByRegion(@Param("region") String region){
 		return ResponseEntity.ok(signalRepository.findByRegion(region));
 	}
