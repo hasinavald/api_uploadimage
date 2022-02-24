@@ -14,10 +14,12 @@ public class Signal {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Lob
-	@Column(name="image")
-	@Type(type="org.hibernate.type.BinaryType")
-	private byte[] image;
+	// @Lob
+	// @Column(name="image")
+	// @Type(type="org.hibernate.type.BinaryType")
+	// private byte[] image;
+
+	private String image;
 	
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(	name = "type", 
@@ -38,7 +40,17 @@ public class Signal {
 	private String username;
 
 	private Date date;
+
+	private int seen;
 	
+	public int getSeen() {
+		return seen;
+	}
+
+	public void setSeen(int seen) {
+		this.seen = seen;
+	}
+
 	public Long getId() {
         return id;
     }
@@ -47,13 +59,21 @@ public class Signal {
         this.id = id;
     }
 
-    public byte[] getImage() {
-        return image;
-    }
+    // public byte[] getImage() {
+    //     return image;
+    // }
 
-    public void setImage(byte[] image) {
-        this.image = image;
-    }
+    // public void setImage(byte[] image) {
+    //     this.image = image;
+    // }
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
 
 	public List<TypeSignal> getTypeSignal() {
 		return typeSignal;
