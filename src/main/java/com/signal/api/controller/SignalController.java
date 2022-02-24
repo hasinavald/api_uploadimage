@@ -113,7 +113,7 @@ public class SignalController {
 	}
 	
 	@PostMapping("/postsignal")
-	@PreAuthorize("hasRole('USER')")
+	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
 	public ResponseEntity<MessageResponse> uploadFile(
 		@RequestParam("file") MultipartFile file, 
 		@RequestParam("typeSignal") String typeSignal,
